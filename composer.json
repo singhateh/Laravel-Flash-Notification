@@ -1,0 +1,33 @@
+{
+    "name": "jambasangsang/flash",
+    "description": "This package will send flash notification to your application",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Jambasangsang\\Flash\\": "src/"
+        },
+        "files": [
+            "src/constant.php",
+            "src/helpers.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "alagie singhateh",
+            "email": "3939919@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Jambasangsang\\Flash\\FlashNotificationServiceProvider"
+            ],
+            "aliases": {
+                "LaravelFlash": "Jambasangsang\\Flash\\Facades\\LaravelFlash"
+            }
+        }
+    }
+}
