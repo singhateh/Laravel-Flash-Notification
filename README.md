@@ -2,10 +2,10 @@
 [![Latest Version](https://img.shields.io/github/release/singhateh/Laravel-Flash-Notification.svg?style=flat-square)](https://github.com/singhateh/Laravel-Flash-Notification/releases)
 [![Latest Version](https://img.shields.io/github/license/singhateh/Laravel-Flash-Notification)](https://github.com/singhateh/Laravel-Flash-Notification/license)
 [![Stars](https://img.shields.io/github/stars/singhateh/Laravel-Flash-Notification)](https://github.com/singhateh/Laravel-Flash-Notification/stargazers)
-[![Total Downloads](https://img.shields.io/packagist/dt/singhateh/Laravel-Flash-Notification)](https://packagist.org/packages/jambasangsang/flash)
+[![Total Downloads](https://img.shields.io/packagist/dt/jambasangsang/flash.svg?style=flat-square)](https://packagist.org/packages/jambasangsang/flash)
 
-# Flash Notification 
-Flash Notification Laravel Framework Types:
+# Laravel Flash Notification 
+Flash Notification Types:
 
 <p align="center">
     <img src="screenshot.gif" alt="Laravel Flash Notification" width="600px">
