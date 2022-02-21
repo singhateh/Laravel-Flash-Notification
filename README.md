@@ -1,6 +1,6 @@
-<!-- [![Issues](https://img.shields.io/github/issues/singhateh/Laravel-Flash-Notification)](https://github.com/singhateh/Laravel-Flash-Notification/issues) -->
-[![Latest Version](https://img.shields.io/github/release/singhateh/Laravel-Flash-Notification.svg?style=flat-square)](https://github.com/singhateh/Laravel-Flash-Notification/releases)
-[![Latest Version](https://img.shields.io/github/license/singhateh/Laravel-Flash-Notification)](https://github.com/singhateh/Laravel-Flash-Notification/license)
+[![Issues](https://img.shields.io/github/issues/singhateh/Laravel-Flash-Notification)](https://github.com/singhateh/Laravel-Flash-Notification/issues)
+[![Latest Version](https://img.shields.io/packagist/v/jambasangsang/flash.svg?style=flat-square)](https://packagist.org/packages/jambasangsang/flash)
+[![License](https://img.shields.io/github/license/singhateh/Laravel-Flash-Notification)](https://github.com/singhateh/Laravel-Flash-Notification/license)
 [![Stars](https://img.shields.io/github/stars/singhateh/Laravel-Flash-Notification)](https://github.com/singhateh/Laravel-Flash-Notification/stargazers)
 [![Total Downloads](https://img.shields.io/packagist/dt/jambasangsang/flash.svg?style=flat-square)](https://packagist.org/packages/jambasangsang/flash)
 
@@ -14,10 +14,13 @@ Flash Notification Types:
 
 ## Installation
 
-Firstly, You can install the package using composer.
+Quick Installation using composer.
 
-Run `composer require jambasangsang/flash`
+Run:
 
+```sh
+ composer require jambasangsang/flash
+```
 
 ### Then you can add the service provider to `config/app.php`. 
 In Laravel versions 5.6 and beyond, this step can be skipped if package auto-discovery is enabled.
@@ -31,13 +34,13 @@ In Laravel versions 5.6 and beyond, this step can be skipped if package auto-dis
 ### Publish the configuration file:
  
 ```sh
-$ php artisan vendor:publish --provider='Jambasangsang\Flash\FlashNotificationServiceProvider' --tag="flash-config"
+php artisan vendor:publish --provider='Jambasangsang\Flash\FlashNotificationServiceProvider' --tag="flash-config"
 ```
 
 ### If not found run the below command:
 
 ```sh
-$ php artisan vendor:publish 
+ php artisan vendor:publish 
 ```
 
 And select `Jambasangsang\Flash\FlashNotificationServiceProvider`
