@@ -7,9 +7,8 @@
 # Flash Notification 
 Flash Notification Laravel Framework Toast Styling
 
-![Screenshot](https://www.canva.com/design/DAE1y5eyV8Y/_wpn-4oInmRDqeHKfLUn4A/view)
 <p align="center">
-    <img src="screenshot.gif" alt="Laravel Flash Notification" width="300px">
+    <img src="screenshot.gif" alt="Laravel Flash Notification" width="600px">
 </p>
 
 
