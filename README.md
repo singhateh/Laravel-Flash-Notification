@@ -7,9 +7,11 @@
 # Flash Notification 
 Flash Notification Laravel Framework Toast Styling
 
-![Screenshot from 2020-12-29 11-28-38](https://www.canva.com/design/DAE1y5eyV8Y/_wpn-4oInmRDqeHKfLUn4A/view)
+![Screenshot](https://www.canva.com/design/DAE1y5eyV8Y/_wpn-4oInmRDqeHKfLUn4A/view)
+<p align="center">
+    <img src="screenshot.gif" alt="Laravel Flash Notification" width="300px">
+</p>
 
-[!(https://www.canva.com/design/DAE1y5eyV8Y/_wpn-4oInmRDqeHKfLUn4A/view)]
 
 ## Installation
 
