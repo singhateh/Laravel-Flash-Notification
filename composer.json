@@ -2,6 +2,20 @@
     "name": "jambasangsang/flash",
     "description": "This package will send flash notification to your application",
     "type": "library",
+    "keywords": [
+        "singhateh",
+        "livewire",
+        "flash",
+        "toast",
+        "toastr",
+        "laravel",
+        "notification",
+        "laravel-flash",
+        "jambasangsang",
+        "fash notification",
+        "laravel session notification"
+    ],
+    "homepage": "https://github.com/singhateh/https://github.com/singhateh/Laravel-Flash-Notification",
     "license": "MIT",
     "autoload": {
         "psr-4": {
@@ -11,10 +25,12 @@
     "authors": [
         {
             "name": "alagie singhateh",
-            "email": "3939919@gmail.com"
+            "email": "3939919@gmail.com",
+            "role": "Developer"
         }
     ],
     "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {},
     "extra": {
         "laravel": {

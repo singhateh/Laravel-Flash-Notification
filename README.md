@@ -5,7 +5,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/singhateh/Laravel-Flash-Notification.svg?style=flat-square)](https://packagist.org/packages/jambasangsang/flash)
 
 # Flash Notification 
-Flash Notification Laravel Framework Toast Styling
+Flash Notification Laravel Framework Types:
 
 <p align="center">
     <img src="screenshot.gif" alt="Laravel Flash Notification" width="600px">
