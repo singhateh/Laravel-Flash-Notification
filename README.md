@@ -7,6 +7,7 @@
 # Flash Notification 
 Flash Notification Laravel Framework Toast Styling
 
+![Screenshot from 2020-12-29 11-28-38](https://user-images.githubusercontent.com/10859693/103277521-82676380-49c9-11eb-9b83-48e9620e7314.png)
 
 [!(https://www.canva.com/design/DAE1y5eyV8Y/_wpn-4oInmRDqeHKfLUn4A/view)]
 
