@@ -11,7 +11,7 @@ return [
         'showCloseButton'         => true,
         'closeButtonText'       => 'Close',
         'alertScreenReader'      => true,
-        'duration'       => 5000,
+        'duration'       => 10000,
         'onClose'        => 'el', // Write your custom function here
         'closeButtonTextColor'      => '#FFFF',
     ],

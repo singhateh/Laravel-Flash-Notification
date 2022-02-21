@@ -7,43 +7,115 @@
 # Flash Notification 
 Flash Notification Laravel Framework Toast Styling
 
+
+[!(https://www.canva.com/design/DAE1y5eyV8Y/_wpn-4oInmRDqeHKfLUn4A/view)]
+
 ## Installation
 
-Firstly, Pull the package through Composer from packagist.
+Firstly, You can install the package using composer.
 
 Run `composer require jambasangsang/flash`
 
-### This section required only for Laravel < 5.6
-And then include the service provider within `config/app.php`.
+
+### Then you can add the service provider to `config/app.php`. 
+In Laravel versions 5.6 and beyond, this step can be skipped if package auto-discovery is enabled.
 
 ```php
 'providers' => [
-    \Jambasangsang\Flash\FlashNotificationServiceProvider::class,
+    Jambasangsang\Flash\FlashNotificationServiceProvider::class,
 ];
 ```
 
-And, for convenience, add a facade alias to this same file at the bottom:
-
-```php
-'aliases' => [
-    'LaravelFlash' => Jambasangsang\Flash\Facades\LaravelFlash::class,
-];
+### Publish the configuration file:
+ 
+```sh
+$ php artisan vendor:publish --provider='Jambasangsang\Flash\FlashNotificationServiceProvider' --tag="flash-config"
 ```
+
+### If not found run the below command:
+
+```sh
+$ php artisan vendor:publish 
+```
+
+And select `Jambasangsang\Flash\FlashNotificationServiceProvider`
 
 ## Usage
 
-Within your controllers, before you perform a redirection...
+#### 1. If your application is using jQuery do not include [@jQuery], Otherwise Add the below code in your main view template:
 
-```php
-public function store(Request $request)
-{
-    LaravelFlash::withSuccess('Your Record has been saved successfully!');
+CSS
+`@flashStyle`, 
 
-    return Redirect::route('destination');
-}
+JS
+`@jQuery`, 
+`@flashScript`,
+`@flashRender`
+
+
+Example:
+
+```blade
+
+<!-- layouts/app.blade.php -->
+
+<!doctype html>
+<html>
+    <head>
+        
+        @flashStyle
+    </head>
+
+    <body>
+        
+    @jQuery
+    @flashScript
+    @flashRender
+
+    </body>
+</html>
+
 ```
 
-You may also use:
+#### 2. Within your controllers, before you perform a redirection...
+
+Example:
+
+```php
+
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Http\Requests\LevelStoreRequest;
+use App\Models\Level;
+use Illuminate\Http\RedirectResponse;
+use App\Jambasangsang\Services\Levels\LevelService;
+use Jambasangsang\Flash\Facades\LaravelFlash;
+
+class LevelController extends Controller
+{
+
+    public function store(LevelStoreRequest $request, LevelService $levelService): RedirectResponse
+    {
+       
+       try{
+            $levelService->storeLevelData(new Level(), $request);
+
+            LaravelFlash::withSuccess("Level added successfully!");
+
+       }catch{
+
+            LaravelFlash::withError("Woops!! an error check your input and try again!");
+       }
+        
+        return redirect()->route('levels.index');
+    }
+}
+
+```
+
+You may also use other options below:
 
 - `LaravelFlash::withInfo('You have pay your bills this week!')`
 - `LaravelFlash::withSuccess('Your Record has been saved successfully!')`
@@ -51,81 +123,39 @@ You may also use:
 - `LaravelFlash::withError('Your Record was not saved Fail!')`
 
 
-This will set a few keys in the session:
+### configuration:
 
-- 'flash_notification.title' - The message title you're flashing
-- 'flash_notification.message' - The message you're flashing
-- 'flash_notification.level' - A string that represents the type of notification (good for applying CSS/Bootstrap class names)
-
-Alternatively you may reference the `flash()` helper function, instead of the facade. Here's an example:
+##### to customize your flash notification.
 
 ```php
-/**
- * Destroy the user's session (logout).
- *
- * @return Response
- */
-public function destroy()
-{
-    Auth::logout();
+// config/flash.php
+<?php
 
-    flash()->success('Logout successfull','You have been logged out.');
+return [
 
-    return home();
-}
+    'options' => [
+        'message'       => 'Default Message Here', //String
+        'messageTextColor'   => '#ffff', //String
+        'position'        => 'top-right', //String
+        'customClass'     => '', //String
+        'width'       => 'auto', //String Ex. 190px etc.
+        'showCloseButton'         => true, //Boolean
+        'closeButtonText'       => 'Close', //String
+        'alertScreenReader'      => true, //Boolean
+        'duration'       => 5000,
+        'onClose'        => 'el', // Write your custom function here
+        'closeButtonTextColor'      => '#FFFF',
+    ],
+];
+
+
 ```
 
-You can even chain them to flash multiple messages at once.
+## Credits
 
-```php
-/**
- * Destroy the user's session (logout).
- *
- * @return Response
- */
-public function destroy()
-{
-    Auth::logout();
+- [Alagie Singhateh](https://github.com/singhateh)
+- [All Contributors](../../contributors)
 
-    flash()->success('Logout successfull','You have been logged out.')
-    ->warning('Close Browser','You should close this Browser window now');
+## License
 
-    return home();
-}
-```
-
-With this messages flashed to the session, you may now display it in your view(s). 
-
-```html
-@include('flash-toastr::message')
-```
-
-This will include the message.blade.php in to your view.
-
-If you need to modify the flash message partials, you can run:
-
-```bash
-php artisan vendor:publish --tag=flash-views
-```
-
-The message view will now be located in the `resources/views/vendor/flash-toastr/` directory.
-
-### JavaScript Options for toastr.js
-You can pass an array of options, which will be used to setup toastr.js
-
-```php
-{{ Config::set('flash-toastr.options', ['progressBar' => false,'positionClass' => 'toast-top-left']) }}
-```
-
-You can also publish the config file:
-
-```bash
-php artisan vendor:publish --tag=flash-config
-```
-To publish both, config and views you can run:
-
-```bash
-php artisan vendor:publish --tag=flash
-```
-
-See [Toastr Documentation](http://codeseven.github.io/toastr/demo.html) for all available options
+MIT

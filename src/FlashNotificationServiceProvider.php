@@ -20,7 +20,7 @@ class FlashNotificationServiceProvider extends ServiceProvider
             __DIR__ . '/config/flash.php' => config_path('flash.php'),
             __DIR__ . '/resources/views' => resource_path('views/vendor/flash'),
             __DIR__ . '/public' => public_path('vendor'),
-        ]);
+        ], 'flash-config');
     }
 
 
