@@ -6,11 +6,7 @@
     "autoload": {
         "psr-4": {
             "Jambasangsang\\Flash\\": "src/"
-        },
-        "files": [
-            "src/constant.php",
-            "src/helpers.php"
-        ]
+        }
     },
     "authors": [
         {
